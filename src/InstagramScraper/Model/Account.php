@@ -176,6 +176,11 @@ class Account extends AbstractModel
     protected $isInterestAccount = false;
 
     /**
+     * @var string
+     */
+    protected $whatsappNumber = '';
+
+    /**
      * @return bool
      */
     public function isLoaded()
@@ -330,6 +335,24 @@ class Account extends AbstractModel
     public function setIsInterestAccount(bool $isInterestAccount): self
     {
         $this->isInterestAccount = $isInterestAccount;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWhatsappNumber(): string
+    {
+        return $this->whatsappNumber;
+    }
+
+    /**
+     * @param string $whatsappNumber
+     * @return Account
+     */
+    public function setWhatsappNumber(string $whatsappNumber): self
+    {
+        $this->whatsappNumber = $whatsappNumber;
         return $this;
     }
 
