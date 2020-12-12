@@ -81,11 +81,6 @@ class Account extends AbstractModel
     protected $isVerified = false;
 
     /**
-     * @var bool
-     */
-    protected $isLoaded = false;
-
-    /**
      * @var Media[]
      */
     protected $medias = [];
@@ -169,6 +164,16 @@ class Account extends AbstractModel
      * @var string
      */
     protected $connectedFbPage = '';
+
+    /**
+     * @var bool
+     */
+    protected $isFavorite = false;
+
+    /**
+     * @var bool
+     */
+    protected $isInterestAccount = false;
 
     /**
      * @return bool
@@ -290,6 +295,42 @@ class Account extends AbstractModel
     public function getMedias()
     {
         return $this->medias;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFavorite(): bool
+    {
+        return $this->isFavorite;
+    }
+
+    /**
+     * @param bool $isFavorite
+     * @return Account
+     */
+    public function setIsFavorite(bool $isFavorite): self
+    {
+        $this->isFavorite = $isFavorite;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isInterestAccount(): bool
+    {
+        return $this->isInterestAccount;
+    }
+
+    /**
+     * @param bool $isInterestAccount
+     * @return Account
+     */
+    public function setIsInterestAccount(bool $isInterestAccount): self
+    {
+        $this->isInterestAccount = $isInterestAccount;
+        return $this;
     }
 
     /**
